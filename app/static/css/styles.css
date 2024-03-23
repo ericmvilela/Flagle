@@ -88,7 +88,7 @@ body {
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 
 .text-input {
@@ -107,8 +107,8 @@ body {
 }
 
 .button-input {
-    width: 20%;
-    height: 50%;
+    width: 15%;
+    height: 60%;
     border-radius: 8px;
     font-size: 2.2rem;
     display: flex;
@@ -208,3 +208,16 @@ input::-webkit-calendar-picker-indicator {
     font-size: 1.2rem;
 }
 
+.fa-solid {
+    font-size: 1.7rem;
+    color: var(--font-color);
+}
+
+@media (max-width: 1000px) {
+    .game-container {
+        width: 90%;
+    }
+    .fa-solid {
+        font-size: 2rem;
+    }
+}

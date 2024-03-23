@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="https://kit.fontawesome.com/85de8204c5.js" crossorigin="anonymous"></script>
     <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
     <title>Bandeiras</title>
 </head>
@@ -38,7 +39,7 @@
                     <form action="" onsubmit="guess();return false" class="form-container">
                         <input type="hidden" value="{{date}}" id="date_challenge">
                         <input type="text" placeholder="Digite o país" class="text-input" list="flags-list" autocomplete="off" id="guess-country">
-                        <button type="submit" class="button-input" id="button-submit">➡️</button>
+                        <button type="submit" class="button-input" id="button-submit"><i class="fa-solid fa-arrow-right"></i></button>
 
                         <datalist id="flags-list">
                             {% for country in countries %}

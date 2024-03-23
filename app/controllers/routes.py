@@ -9,7 +9,7 @@ from io import BytesIO
 import math
 import pytz
 
-date = (datetime.now(pytz.timezone('America/Sao_Paulo')) - timedelta(days=8)).strftime('%d/%m/%Y')
+date = (datetime.now(pytz.timezone('America/Sao_Paulo')) - timedelta(days=0)).strftime('%d/%m/%Y')
 
 
 @app.route('/correct-answer', methods=['GET'])
