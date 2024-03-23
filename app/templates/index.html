@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
+    <title>Bandeiras</title>
+</head>
+<body class="dark">
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="messages-modal">
+                <p id="message-result">Congratulations, you guessed today's flag correctly!!</p>
+                <img class="flag-img-modal" id="flag-modal" src="data:image/png;base64, {{ img_str }}" alt="Current Flag">
+                <p id="country-name"></p>
+                <p id="time-remaining-text"></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="game-container">
+            <div class="flag-container">
+                <img class="flag-img" id="flag-discover" src="data:image/png;base64, {{ img_str }}" alt="Current Flag">
+            </div>
+            <div class="guess-container">
+                <div class="guess country-guess">
+
+                </div>
+                <div class="guess country-guess"></div>
+                <div class="guess country-guess"></div>
+                <div class="guess country-guess"></div>
+                <div class="guess country-guess"></div>
+                <div class="guess country-guess"></div>
+                <div class="guess">
+                    <form action="" onsubmit="guess();return false" class="form-container">
+                        <input type="hidden" value="{{date}}" id="date_challenge">
+                        <input type="text" placeholder="Digite o país" class="text-input" list="flags-list" autocomplete="off" id="guess-country">
+                        <button type="submit" class="button-input" id="button-submit">➡️</button>
+
+                        <datalist id="flags-list">
+                            {% for country in countries %}
+                                <option value="{{country}}"></option>
+                            {% endfor %}
+                        </datalist>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+
+</html>
